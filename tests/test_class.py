@@ -1,7 +1,7 @@
 import unittest
 import pandas as pd
-from .app import app
-from .parsedata import convert_to_list
+from qa.app import app
+from qa.parsedata import convert_to_list
 
 class TestAskMe(unittest.TestCase):
 
@@ -18,5 +18,4 @@ class TestAskMe(unittest.TestCase):
     def test_num_docs(self):
         self.assertEqual(len(convert_to_list("qa/dataset/Answers.txt")), 2609)
 
-if __name__ == "__main__":
-    unittest.main()
+
