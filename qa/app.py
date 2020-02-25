@@ -1,5 +1,6 @@
+from .edit_distance import edit_dis
 from flask import Flask, render_template, request
-from edit_distance import edit_dis
+
 
 app = Flask(__name__)
 
@@ -14,7 +15,3 @@ def validate():
             predicted = edit_dis(result)
             return render_template('index.html', predicted=predicted)
     return render_template('index.html')
-
-
-if __name__ == '__main__':
-    app.run(debug=False)
