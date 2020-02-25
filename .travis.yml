@@ -1,15 +1,16 @@
 sudo: required
-services:
-  - docker
+#services:
+#  - docker
 language: python
 install:
   - pip install -r requirements.txt
 # command to run tests
 script:
   # unit test
-  - python -m pytest -v
+#  - python -m pytest -v
   - pwd
   - ls
+  - cd qa && ls
   # linting test
   # - flake8
 after_success:
