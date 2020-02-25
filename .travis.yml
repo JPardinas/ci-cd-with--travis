@@ -8,6 +8,8 @@ install:
 script:
   # unit test
   - python -m pytest -v
+  - pwd
+  - ls
   # linting test
   # - flake8
 after_success:
