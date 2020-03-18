@@ -1,19 +1,17 @@
 stages:
   - name: deploy
-    if: sender != traviscibot AND sender != Travis AND sender != "tkdepend" AND sender != "jpardinas" 
+    if: sender != "@JPardinas" AND sender != traviscibot AND sender != Travis AND sender != "tkdepend" AND sender != "jpardinas" 
 sudo: required
 #services:
 #  - docker
 language: python
-install:
-  - pip install -r requirements.txt
 # command to run tests
 script:
   # unit test
 #  - python -m pytest -v
   - pwd
   - ls
-  - touch test.txt
+  - echo "this is a new line" >> test.txt
   - cd qa && ls
   # linting test
   # - flake8
