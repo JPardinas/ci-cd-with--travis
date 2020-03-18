@@ -24,4 +24,4 @@ deploy:
   name: tkdepend
   target_branch: test-deply
   on:
-    branch: master
+    branch: test-deply
