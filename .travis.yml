@@ -11,8 +11,8 @@ script:
 #  - python -m pytest -v
   - pwd
   - ls
-  - echo "this is a new line" >> test.txt
-  - cd qa && ls
+  - printenv
+  #- echo "this is a new line" >> test.txt
   # linting test
   # - flake8
 deploy:
