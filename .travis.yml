@@ -13,6 +13,7 @@ script:
 #  - python -m pytest -v
   - pwd
   - ls
+  - touch test.txt
   - cd qa && ls
   # linting test
   # - flake8
