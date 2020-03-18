@@ -1,3 +1,6 @@
+stages:
+  - name: deploy
+    if: sender != traviscibot AND sender != Travis AND sender != "tkdepend" AND sender != "jpardinas" 
 sudo: required
 #services:
 #  - docker
@@ -13,5 +16,12 @@ script:
   - cd qa && ls
   # linting test
   # - flake8
-after_success:
-  - sh .travis/deploy_dockerhub.sh
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $token  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  name: tkdepend
+  target_branch: gh-pages
+  on:
+    branch: travis-test
