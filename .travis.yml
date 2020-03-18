@@ -1,4 +1,7 @@
 sudo: required
+stages:
+  - name: deploy
+    if: TRAVIS_COMMIT_MESSAGE != *"Deploy JPardinas"*
 #services:
 #  - docker
 language: python
@@ -12,8 +15,12 @@ script:
   - echo "this is a new line" >> test.txt
   # linting test
   # - flake8
-after_success:
-  - git remote add origin https://github.com/JPardinas/ci-cd-with--travis.git:test-deply
-  - git add -A
-  - git commit -m "Travis deploy"
-  - git push
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $token  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  name: tkdepend
+  target_branch: test-deply
+  on:
+    branch: test-deply
