@@ -1,6 +1,3 @@
-stages:
-  - name: deploy
-    if: sender != "@JPardinas" AND sender != traviscibot AND sender != Travis AND sender != "tkdepend" AND sender != "jpardinas" 
 sudo: required
 #services:
 #  - docker
@@ -15,12 +12,7 @@ script:
   - echo "this is a new line" >> test.txt
   # linting test
   # - flake8
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $token  # Set in travis-ci.org dashboard, marked secure
-  keep-history: true
-  name: tkdepend
-  target_branch: test-deply
-  on:
-    branch: test-deply
+after_success:
+  - git add -A
+  - git commit -m "Travis deploy"
+  - git push
