@@ -12,7 +12,7 @@ script:
   - pwd
   - ls
   - printenv
-  #- echo "this is a new line" >> test.txt
+  - echo "this is a new line" >> test.txt
   # linting test
   # - flake8
 deploy:
