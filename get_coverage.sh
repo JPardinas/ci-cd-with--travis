@@ -1,6 +1,4 @@
-#!/usr/bin/env ruby
-require 'json'
-
-data = JSON.parse(coverage.json)
-instance_id = data["totals"]["percent_covered"]
+#!/bin/bash
+python3 -c "import sys, json; print(json.load(sys.stdin)['totals']['percent_covered'])"
+instance_id = python3 -c "import sys, json; print(json.load(sys.stdin)['totals']['percent_covered'])"
 echo $instance_id
