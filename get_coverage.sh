@@ -1,4 +1,2 @@
 #!/bin/bash
-python3 -c "import sys, json; print(json.load(coverage.xml)['totals']['percent_covered'])"
-instance_id = python -c "import sys, json; print(json.load(sys.stdin)['totals']['percent_covered'])"
-echo $instance_id
+python -c "\nimport json\n\nwith open('coverage.json', 'r') as f:\n    distros_dict = json.load(f)\n    f.close()\n    print(distros_dict['totals']['percent_covered'])\n"
