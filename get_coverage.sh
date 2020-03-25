@@ -1,4 +1,4 @@
 #!/bin/bash
-python3 -c "import sys, json; print(json.load(sys.stdin)['totals']['percent_covered'])"
-instance_id = python3 -c "import sys, json; print(json.load(sys.stdin)['totals']['percent_covered'])"
+python3 -c "import sys, json; print(json.load(coverage.xml)['totals']['percent_covered'])"
+instance_id = python -c "import sys, json; print(json.load(sys.stdin)['totals']['percent_covered'])"
 echo $instance_id
