@@ -3,23 +3,10 @@
 language: python
 # command to run tests
 script:
-  # unit test
-#  - python -m pytest -v
   - pwd
   - ls
   - printenv
   - echo "this is a new line" >> test.txt
+  - bash ./get_coverage.sh
   # linting test
   # - flake8
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $token  # Set in travis-ci.org dashboard, marked secure
-  keep-history: true
-  name: tkdepend
-  target_branch: test-deply
-  commit_message: "Deployed new Documentation"
-  on:
-    branch: test-deply
-    condition: $TRAVIS_COMMIT_MESSAGE != "Deployed new Documentation"
-  edge: true
