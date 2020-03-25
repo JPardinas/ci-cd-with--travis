@@ -1,2 +1,2 @@
 #!/bin/bash
-python -c "\nimport json\n\nwith open('coverage.json', 'r') as f:\n    distros_dict = json.load(f)\n    f.close()\n    print(distros_dict['totals']['percent_covered'])\n"
+python -c "\nimport json\n\nf = open('coverage.json', 'r')\ndistros_dict = json.load(f)\nf.close()\nprint(distros_dict['totals']['percent_covered'])\n"

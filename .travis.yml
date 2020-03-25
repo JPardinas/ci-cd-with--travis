@@ -3,10 +3,6 @@
 language: python
 # command to run tests
 script:
-  - pwd
-  - ls
-  - printenv
-  - echo "this is a new line" >> test.txt
   - bash ./get_coverage.sh
   # linting test
   # - flake8
